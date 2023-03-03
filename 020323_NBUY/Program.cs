@@ -242,39 +242,31 @@ namespace _020323_NBUY
      Console.WriteLine("su kadar sesli harf var " + " " + ses);*/
             #endregion
 
-          /*  int ort = 0, arit = 0, buyuk = 0, kucuk = 0;
-            int[] sayilar = new int[20];
-            Random random = new Random();
+                #region Dizi Elemanları Aritmetik Ortalama Hesaplama ve Elemanları Ortalamayla Karşılaştırma
+          	Random rnd = new Random();
+            int[] dizi = new int[20];
+            double sum = 0;
 
-            for (int i = 0; i < 20; i++)
-
+            
+            for (int i = 0; i < dizi.Length; i++)
             {
-                sayilar[i] = random.Next(1, 100);
-                arit += sayilar[i];
-                if (sayilar[i] > ort)
-                {
-                    buyuk++;
-                }
+                dizi[i] = rnd.Next(1, 100);
+                Console.Write(dizi[i] + " ");
+                sum += dizi[i];
+            }
+            double ort = sum / 20;
+
+            int adetb = 0, adetk = 0;
+            for (int i = 0; i < dizi.Length; i++)
+            {
+                if (dizi[i] > ort)
+                    adetb++;
                 else
-                {
-                    kucuk++;
-                }
+                    adetk++;
             }
-            ort = arit / sayilar.Length;
-            Console.WriteLine("Ortalama :" + " " + ort);
-
-           /* if (sayilar[i] > ort)
-            {
-                buyuk++;
-            }
-            else
-            {
-                kucuk++;
-            }
-            Console.WriteLine("Bu kadarı orttan buyuk:" + " " + buyuk);
-            Console.WriteLine("Bu kadarı orttan kucuk:" + " " + kucuk); 
-            */
-
+            Console.WriteLine("Ortalama = " + ort);
+            Console.WriteLine("Ortalamadan büyük sayı adeti = " + adetb+ "\nOrtalamadan küçük sayı adeti = " + adetk);
+#endregion
         }
     }
 }
